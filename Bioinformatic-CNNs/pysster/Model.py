@@ -651,7 +651,7 @@ class Model:
             self.inputs = [self.main_input]
         self.model = KModel(inputs=self.inputs, outputs=[self.cnn])
         self.model.compile(loss = self.params['loss'],
-                           optimizer = Adam(lr = self.params["learning_rate"]))
+                           optimizer = Adam(lr =self.params["learning_rate"]),metrics=["accuracy"])
 
 
     def _prepare_callbacks(self):

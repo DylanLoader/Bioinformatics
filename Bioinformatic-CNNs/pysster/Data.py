@@ -23,6 +23,7 @@ class Data:
     """
 
     def __init__(self, class_files, alphabet, structure_pwm=False):
+        print("test")
         """ Load the sequences and split the data into 70%/15%/15% training/validation/test.
 
         If the goal is to do single-label classification a list of fasta files must be provided
@@ -105,7 +106,8 @@ class Data:
             if length != self.data[x].shape[0]:
                 raise RuntimeError('All sequences must have the same length.')
         self._process_labels()
-        self.train_val_test_split(0.7, 0.15)
+        #self.train_val_test_split(0.7, 0.15)
+        print(alphabet)
 
 
     def train_val_test_split(self, portion_train, portion_val, seed = None):

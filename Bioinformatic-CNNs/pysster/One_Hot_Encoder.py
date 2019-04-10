@@ -39,6 +39,7 @@ class One_Hot_Encoder:
         """
         one_hot = np.zeros((len(sequence), len(self.table)), np.uint8)
         one_hot[np.arange(len(sequence)), np.fromiter(map(self.table.__getitem__, sequence), np.uint32)] = 1
+        print(one_hot)
         return one_hot
 
     def decode(self, one_hot):

@@ -167,7 +167,7 @@ class Model:
                                                                   True, seed=self.params["seed"]),
                                  steps_per_epoch = n_train,
                                  epochs = self.params['epochs'],
-                                 callbacks = self.callbacks,
+                                 callbacks = self.callbacks + [keras.callbacks.History],
                                  verbose = verbose,
                                  validation_data = data._data_generator('val',self.params['batch_size'],
                                                                         True, seed=self.params["seed"]),
